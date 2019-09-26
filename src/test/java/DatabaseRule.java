@@ -5,4 +5,12 @@ public class DatabaseRule extends ExternalResource {
     protected void before(){
     DB.sql2o = new Sql2o("jdbc:postgresql://localhost:5432/animals", null, null);  //Those with linux or windows use  astring for username and an intenger for id
 }
+
+    @Override
+    protected void after() {
+        try(Connection con = DB.sql2o.open()) {
+            String deleteAnimalsQuery = "DELETE FROM animals *;";
+            con.createQuery(deleteAnimalsQuery).executeUpdate();
+        }
+    }
 }

@@ -1,8 +1,13 @@
+import org.junit.Rule;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class AnimalTest {
+
+    @Rule
+    public DatabaseRule database = new DatabaseRule();
+
     @Test
     public void animal_instantiatedCorrectly_true(){
         Animal testAnimal= new Animal("tiger",1);
@@ -35,4 +40,15 @@ public class AnimalTest {
         testAnimal.save();
         assertTrue(Animal.all().get(0).equals(testAnimal));
     }
+
+    @Test
+    public void  all_returnAllInstanceOfAnimal_true(){
+        Animal Animal1=new Animal("tiger",1);
+        Animal1.save();
+        Animal Animal2= new Animal("tiger",1);
+        Animal2.save();
+        assertEquals(true,Animal.all().get(0).equals(Animal1));
+        assertEquals(true,Animal.all().get(1).equals(Animal2));
+    }
+
 }
