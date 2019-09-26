@@ -1,3 +1,7 @@
+import org.sql2o.Connection;
+
+import java.util.List;
+
 public class Endangered extends Animal{
 
     private final Object Endangered;
@@ -28,4 +32,51 @@ public class Endangered extends Animal{
     public String getAge() {
         return age;
     }
+
+    public void saveIntoDatabase(){
+        save();
+        try(Connection con=DB.sql2o.open()){
+            String sql= "INSERT INTO endangereds (name,id,health,age) VALUES(:name,:id,:health,:age)";
+            this.id=(int)con.createQuery(sql,true)
+              .addParameter("name",this.name)
+                    .addParameter("health",this.health)
+                    .addParameter("age",this.age)
+                    .executeUpdate()
+                    .getKey();
+        }
+    }
+
+    public static Endangered finfById(int id){
+        try(Connection con= DB.sql2o.open()){
+            String sql="SELECT *FROM animals WHERE id=:id";
+            Endangered animal=con.createQuery(sql)
+                    .addParameter("id",id)
+                    .throwOnMappingFailure(false)
+                    .executeAndFetchFirst(Endangered.class);
+            if(animal==null){
+                throw new IndexOutOfBoundsException("This animal does not exist!!please,try agian...");
+            }
+            return animal;
+        }
+    }
+    public static Endangered findByName(Endangered name){
+        try(Connection con=DB.sql2o.open()){
+            String sql= "SELECT *FROM animals WHERE name=:name";
+            Endangered animal=con.createQuery(sql)
+                    .addParameter("name",name)
+                    .throwOnMappingFailure(false)
+                    .executeAndFetchFirst(Endangered.class);
+            return animal;
+        }
+    }
+
+    public static List<Endangered> all(){
+        String sql="SELECT *FROM endangereds";
+        try(Connection con=DB.sql2o.open()){
+            return con.createQuery(sql).executeAndFetch(Endangered.class);
+        }
+    }
+
+
+
 }
