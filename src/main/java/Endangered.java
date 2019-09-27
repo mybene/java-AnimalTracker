@@ -17,6 +17,7 @@ public class Endangered extends Animal{
  public static final String age_newborn="newborn";
  public static final String age_young="young";
  public static final String age_adult="adult";
+    public Object getId;
 
     public Endangered(String name, String health, String age) {
         this.name = name;
@@ -78,5 +79,29 @@ public class Endangered extends Animal{
     }
 
 
+    public boolean equals(Endangered savedEndangered) {
+    }
 
+    public void save() {
+    }
+
+    public Object getId() {
+    }
+
+    public Endangered getName() {
+        return name;
+    }
+
+    public void setName(Endangered name) {
+        this.name = name;
+    }
+
+    public static long findById(Object getId) {
+    }
+
+    public void delete() {
+    }
+
+    public List getSightings() {
+    }
 }

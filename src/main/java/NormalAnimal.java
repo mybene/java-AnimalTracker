@@ -1,3 +1,4 @@
+import java.util.Collection;
 import java.util.List;
 import org.sql2o.*;
 
@@ -56,6 +57,17 @@ public class NormalAnimal{
         }
     }
 
+    public void delete() {
+    }
+
+    public static long findByName(String name) {
+    }
+
+    public List getSightings() {
+    }
+
+    public Collection<Object> getSighting() {
+    }
 
 
 //    public interface Animal1 {
