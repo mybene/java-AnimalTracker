@@ -5,9 +5,9 @@ import java.util.List;
 public class Endangered extends Animal{
 
     private final Object Endangered;
-    public String name;
- public String health;
- public String age;
+    private String name;
+    private String health;
+    private  String age;
 
 
  public static final String health_ill = "ill";
@@ -34,7 +34,7 @@ public class Endangered extends Animal{
         return age;
     }
 
-    public void saveIntoDatabase(){
+    public void save(){
         save();
         try(Connection con=DB.sql2o.open()){
             String sql= "INSERT INTO endangereds (name,id,health,age) VALUES(:name,:id,:health,:age)";
@@ -47,7 +47,7 @@ public class Endangered extends Animal{
         }
     }
 
-    public static Endangered finfById(int id){
+    public static Endangered findById(int id){
         try(Connection con= DB.sql2o.open()){
             String sql="SELECT *FROM animals WHERE id=:id";
             Endangered animal=con.createQuery(sql)
@@ -79,29 +79,29 @@ public class Endangered extends Animal{
     }
 
 
-    public boolean equals(Endangered savedEndangered) {
-    }
-
-    public void save() {
-    }
-
-    public Object getId() {
-    }
-
-    public Endangered getName() {
-        return name;
-    }
-
-    public void setName(Endangered name) {
-        this.name = name;
-    }
-
-    public static long findById(Object getId) {
-    }
-
-    public void delete() {
-    }
-
-    public List getSightings() {
-    }
+//    public boolean equals(Endangered savedEndangered) {
+//    }
+//
+//    public void save() {
+//    }
+//
+//    public Object getId() {
+//    }
+//
+//    public Endangered getName() {
+//        return name;
+//    }
+//
+//    public void setName(Endangered name) {
+//        this.name = name;
+//    }
+//
+//    public static long findById(Object getId) {
+//    }
+//
+//    public void delete() {
+//    }
+//
+//    public List getSightings() {
+//    }
 }

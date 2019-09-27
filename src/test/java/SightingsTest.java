@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.sql.Connection;
 import java.sql.Date;
+import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.text.DateFormat;
 
@@ -56,9 +57,11 @@ public class SightingsTest {
     public void saveIntoDataBase_Sightings() {
         testSightings.save();
         Sightings testSightings1 = null;
-        try (Connection con = DB.sql2o.open()) {
-            testSightings1 = con.createQuery("SELECT *FROM sightings WHERE location='zone A'")
+        try (Connection con = (Connection) DB.sql2o.open()) {
+            testSightings1 = ((org.sql2o.Connection) con).createQuery("SELECT *FROM sightings WHERE location='zone A'")
                     .executeAndFetchFirst(Sightings.class);
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
         assertTrue(testSightings1.equals(testSightings));
     }
@@ -147,7 +150,7 @@ public class SightingsTest {
         NormalAnimal testNormalAnimal = new NormalAnimal("cat", "carnivor");
         testNormalAnimal.save();
         testSightings.addAnimal(testNormalAnimal);
-        List savedAnimals = testSightings.getNoramalAnimal();
+        List savedAnimals = testSightings.getNormalAnimal();
         assertTrue(savedAnimals.contains(testNormalAnimal));
     }
 

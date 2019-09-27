@@ -1,10 +1,8 @@
-import org.junit.Rule;
-import org.junit.Test;
 import org.junit.*;
 import static org.junit.Assert.*;
 import java.util.ArrayList;
 import java.util.List;
-import org.sql2o.*
+import org.sql2o.*;
 
 public class NormalAnimalTest {
   NormalAnimal testNormalAnimal;
@@ -105,7 +103,7 @@ public class NormalAnimalTest {
         sightings.save();
         sightings.addAnimal(testNormalAnimal);
         testNormalAnimal.delete();
-        assertEquals(0,sightings.getNoramalAnimal().size());
+        assertEquals(0,sightings.getNormalAnimal(sightings).size());
     }
 
     @Test

@@ -8,6 +8,7 @@ public class Sightings {
     private  String location;
     private String rangeName;
     private Timestamp whichtime;
+    private String NormalAnimal;
 
     public Sightings(String location, String rangeName) {
         this.location = location;
@@ -103,6 +104,7 @@ public class Sightings {
          con.createQuery(sql).addParameter("id",this.id).throwOnMappingFailure(false).executeAndFetch(NormalAnimal.class);
         }
     }
+
     public static List<Sightings> mostRecent(){
             String sql="SELECT *FROM SIGHTINGS where whichtime BETWEEN now()-interval'36hours' AND now() ORDER BY whichtime DESC LIMIT 5";
             try(Connection con=DB.sql2o.open()){
@@ -119,5 +121,11 @@ public class Sightings {
 
     public Timestamp getWhichtime() {
         return whichtime;
+    }
+
+
+
+    public String getNormalAnimal(Sightings sightings) {
+        return NormalAnimal;
     }
 }
