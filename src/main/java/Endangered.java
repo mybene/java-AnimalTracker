@@ -17,11 +17,12 @@ public class Endangered extends Animal{
  public static final String age_young="young";
  public static final String age_adult="adult";
 
-    public Endangered(int id, String name, String species, boolean endangered, String health, String location, String rangeName, boolean sighting, String ename, String health1, String eage) {
-        super(id, name, species, endangered, health, location, rangeName, sighting);
-        Ename = ename;
-        this.health = health1;
-        Eage = eage;
+    public Endangered(String name, String species, String health, String age){
+        this.name = name;
+        endangered = true;
+        this.health = health;
+        this.Eage = Eage;
+        this.species = species;
     }
 
     public String getHealth() {

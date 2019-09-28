@@ -7,23 +7,17 @@ public class Animal {
     public String name;
     public String species;
     public boolean endangered;
-    public String health;
-    public String location;
-    public String rangeName;
-    public boolean sighting;
 
-    public Animal(int id, String name, String species, boolean endangered, String health, String location, String rangeName, boolean sighting) {
+    public Animal(int id, String name, String species, boolean endangered) {
         this.id = id;
         this.name = name;
         this.species = species;
-        this.endangered = false;
-        this.health = health;
-        this.location = location;
-        this.rangeName = rangeName;
-        this.sighting = false;
+        this.endangered = endangered;
     }
 
 
+    public Animal() {
+    }
 
 
 //    public Animal( name, String species, String range_name, String eId, String health, String age, String location) {

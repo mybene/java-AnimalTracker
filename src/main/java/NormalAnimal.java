@@ -8,19 +8,13 @@ public class NormalAnimal extends Animal {
     private int id;
     private boolean endangered;
 
-    public NormalAnimal(int id, String name, String species, boolean endangered, String health, String location, String rangeName, boolean sighting, String name1, String species1, int id1, boolean endangered1) {
-        super(id, name, species, endangered, health, location, rangeName, sighting);
-        this.name = name1;
-        this.species = species1;
-        this.id = id1;
-        this.endangered = endangered1;
+
+    public NormalAnimal(String name, String species) {
+
+        this.name = name;
+        this.species = species;
+        endangered = false;
     }
-//    public NormalAnimal(String name, String species) {
-//
-//        this.name = name;
-//        this.species = species;
-//        endangered = false;
-//    }
 
 
     public String getName() {

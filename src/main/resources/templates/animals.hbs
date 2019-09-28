@@ -1,0 +1,22 @@
+{{#partial "content"}}
+    <body>
+    {{#each animals}}
+        {{#if animals}}
+            name: {{name}}
+            <br>
+        {{/if}}
+    {{/each}}
+
+
+    </body>
+    <style>
+    body{
+    background-image:url('https://ak5.picdn.net/shutterstock/videos/1024199135/thumb/1.jpg');
+       background-repeat:no-repeat;
+    background-size:cover;
+    }
+</style>
+{{/partial}}
+
+
+{{> layout.hbs}}
