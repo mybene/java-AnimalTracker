@@ -1,12 +1,13 @@
 import java.util.List;
 import org.sql2o.*;
 
-public abstract class Animal {
+public class Animal {
 
     public int id;
     public String name;
     public String species;
     public boolean endangered;
+
 
 
     public int getId() {
@@ -63,4 +64,12 @@ public abstract class Animal {
            return con.createQuery(sql).addParameter("id",this.id).executeAndFetch(Sightings.class);
         }
  }
+
+ public static List<Animal> all() {
+        String sql="SELECT *FROM animals";
+        try(Connection con=DB.sql2o.open()){
+            return con.createQuery(sql).throwOnMappingFailure(false).executeAndFetch(Animal.class);
+        }
+    }
+
 }

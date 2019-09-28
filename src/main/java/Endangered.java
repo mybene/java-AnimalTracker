@@ -70,13 +70,13 @@ public class Endangered extends Animal{
             return animal;
         }
     }
-
-    public static List<Endangered> all(){
-        String sql="SELECT *FROM endangereds";
-        try(Connection con=DB.sql2o.open()){
-            return con.createQuery(sql).executeAndFetch(Endangered.class);
-        }
-    }
+//
+//    public static List<Endangered> all(){
+//        String sql="SELECT *FROM endangereds";
+//        try(Connection con=DB.sql2o.open()){
+//            return con.createQuery(sql).executeAndFetch(Endangered.class);
+//        }
+//    }
 
 
 

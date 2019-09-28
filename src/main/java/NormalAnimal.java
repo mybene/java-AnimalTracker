@@ -31,12 +31,12 @@ public class NormalAnimal extends Animal {
         return id;
     }
 
-    public static List<NormalAnimal> all() {
-        String sql = "SELECT *FROM animals WHERE endangered='false' ";
-        try (Connection con = DB.sql2o.open()) {
-            return con.createQuery(sql).throwOnMappingFailure(false).executeAndFetch(NormalAnimal.class);
-        }
-    }
+//    public static List<Animal> all() {
+//        String sql = "SELECT *FROM animals WHERE endangered='false' ";
+//        try (Connection con = DB.sql2o.open()) {
+//            return con.createQuery(sql).throwOnMappingFailure(false).executeAndFetch(NormalAnimal.class);
+//        }
+//    }
 
 
     public void save() {

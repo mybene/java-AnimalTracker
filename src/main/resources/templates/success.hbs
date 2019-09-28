@@ -1,12 +1,14 @@
-{{#partial content}}
-    <body>
+{{#partial "content"}}
+<body>
+
+
     <div class="container text-center">
-        <h1>ENDNANGERED ANIMALS'S SIGHTINGS RECORED</h1>
+        <h3>YOU HAVE SUCCESSFULY ADDED THE FOLLOWING ANIMAL</h3>
 
      <div>
 
 
-        <table class="table table-bordered table-SILVER">
+        <table class="table table-bordered">
             <thead>
             <tr>
 
@@ -33,17 +35,24 @@
         </table>
      </div>
         <br><br>
-        <a class="btn btn-warning stretched-link" href="/">Back</a>
-        <a class="btn btn-warning stretched-link" href="/animals">List of all animals</a>
+        <a   class="btn btn-warning "href="/">Back</a>
+        <a class="btn btn-warning " href="/animals">List of all animals</a>
 
     </div>
     <style>
-    .container{
+    body{
     background-image:url('images/elephant.jpeg');
     background-size:cover;
     }
-</style>
-    </body>
+    table{
+    background:transparent;
+    background-color:silver;
+    opacity:0.9;
+    color:golden;
+    }
 
+</style>
+
+</body>
 {{/partial}}
 {{>layout.hbs}}

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,26 +7,65 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="./styleS/app.css">
+<!--    <link rel="stylesheet" href="styles/app.css">-->
     <title>WILDLIFE-TRACKER</title>
 
 </head>
+
 <body>
 <div class="title">
     <h2>WILDLIFE-TRACKER</h2>
     <P>Never Lost a track of jungle's animals</P>
 
 
+
 </div>
+
+
 <div style="text-center">
-    <form action="/animal">
-        <button type="submit" class="btn btn-default">Go Started!!</button>
-    </form>
+    {{#block "content"}}
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/animal/new">New Animals</a></li>
+                <li><a href="/success">All Animal</a></li>
+            </ul>
+        </nav>
+
+<!--    <a href="/welcome"><button type="submit" class="btn btn-default">Go Started!!</button></a>-->
+
+
+    {{/block}}
 </div>
 <style>
     body{
     background-image:url("images/home.jpeg");
     background-size:cover;
+    background-repeat:no-repeat;}
+    ul{
+        list-style-type:none;
+        margin:0;
+        padding:0;
+
+        }
+        li a{
+        dispaly:block;
+        color:yellow;
+        padding:10px 20px;
+        text-decoration:underline;
+        font-size:25px;
+        }
+        li a:hover{
+        background-color:silver;
+        color:black;
+        }
+.title{
+margin:40px;
+color:white}
+.title p{
+font-size:30px;
+font-style:italic;
+}
 </style>
 
 </body>

@@ -1,11 +1,12 @@
-{{#partial "contnet"}}
-
+{{#partial "content"}}
+<body>
     <div class="container">
 
+<img src="./images/buck.jpeg" alt="buck" width="">
 
 <div class="form" style="text-center">
     <h3>Add Animal to Database</h3>
-    <form action="/animal" method="post" clas="form">
+    <form action="/success" method="post" class="form">
         <div class="form-group row">
             <label for="name" class="col-sm-4 col-form-label">Name of animal</label>
             <div class="col-sm-8">
@@ -66,6 +67,19 @@
     </form>
 
 </div>
-</div>
+    </div>
+        <style>
+        .container{
+        background-image:url('images/owl.jpeg');
+        background-size:cover;
+        background-repeat:no-repeat;
+        }
+
+            form{
+            background-color:beige;
+            border:1px solid black;
+            color:black;
+        </style>
+</body>
 {{/partial}}
-{{>loyout.hbs}}
+{{>layout.hbs}}
