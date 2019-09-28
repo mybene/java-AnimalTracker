@@ -1,11 +1,24 @@
 {{#partial "content"}}
 <body>
-    <div class="container">
+<style>
+        .container{
+        background-image:url('images/owl.jpeg');
+        background-size:cover;
+        background-repeat:no-repeat;
+        }
 
-<img src="./images/buck.jpeg" alt="buck" width="">
+        form{
+            background-color:beige;
+            border:1px solid black;
+            color:black;}
+
+        </style>
+</body>
+    <div class="container">
+        <h3>Add Animal to Database</h3>
 
 <div class="form" style="text-center">
-    <h3>Add Animal to Database</h3>
+
     <form action="/success" method="post" class="form">
         <div class="form-group row">
             <label for="name" class="col-sm-4 col-form-label">Name of animal</label>
@@ -30,6 +43,15 @@
             </div>
         </div>
         <div class="form-group row">
+            <label for="endangered" class="col-sm-2 col-form-label">Sighting?</label>
+            <div class="col-sm-10">
+                <select class="form-control" id="endangered">
+                    <option>No</option>
+                    <option >Yes</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
             <label for="endangered" class="col-sm-2 col-form-label">Age</label>
             <div class="col-sm-10">
                 <select class="form-control" id="age">
@@ -44,7 +66,7 @@
             <label for="endangered" class="col-sm-2 col-form-label">Health</label>
             <div class="col-sm-10">
                 <select class="form-control" id="age">
-                    <option>Ill</option>
+                    <option>Sick</option>
                     <option >Okay</option>
                     <option >Healthy</option>
                 </select>
@@ -68,18 +90,6 @@
 
 </div>
     </div>
-        <style>
-        .container{
-        background-image:url('images/owl.jpeg');
-        background-size:cover;
-        background-repeat:no-repeat;
-        }
 
-            form{
-            background-color:beige;
-            border:1px solid black;
-            color:black;
-        </style>
-</body>
 {{/partial}}
 {{>layout.hbs}}

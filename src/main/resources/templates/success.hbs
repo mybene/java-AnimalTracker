@@ -15,6 +15,7 @@
                 <th scope="col">Name</th>
                 <th scope="col">Ranger</th>
                 <th scope="col">Endnagered</th>
+                <th scope="col">Sighting</th>
                 <th scope="col">Age</th>
                 <th scope="col">Health</th>
                 <th scope="col">Location</th>
@@ -26,6 +27,7 @@
                 <th scope="row">{{name}}</th>
                 <td>{{range_name}}</td>
                 <td>{{animal.getEndangered}}</td>
+                <td>{{animal.getSighting}}</td>
                 <td>{{age}}</td>
                 <td>{{health}}</td>
                 <td>{{location}}</td>
@@ -36,11 +38,11 @@
      </div>
         <br><br>
         <a   class="btn btn-warning "href="/">Back</a>
-        <a class="btn btn-warning " href="/animals">List of all animals</a>
+        <a class="btn btn-warning " href="/endnagered_animal">List of all animals</a>
 
     </div>
     <style>
-    body{
+    container{
     background-image:url('images/elephant.jpeg');
     background-size:cover;
     }

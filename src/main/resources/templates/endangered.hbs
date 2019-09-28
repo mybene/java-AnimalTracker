@@ -1,44 +1,24 @@
 {{#partial "content"}}
     <body>
-<h3 class="top">Endangered animal</h3>
-<form action="/endangered" method="post">
-    <div class="form-group">
-        <label>Name of Animal</label><br>
-        <input type="text" id="Eame" name="Eame" class="form-control" placeholder="">
-    </div><br>
-    <label>health:</label><br>
-    < name="Health">
-        <label  for="Health">choose health condition of animal</label>
-        <select id="Health">
-            <option value="Zone A">Healthy</option>
-            <option value="Zone B">Okay</option>
-            <option value="Zone B">Ill</option>
-        </select>
-    <br><br>
-    <div class="form-group">
-        <label>Age</label><br>
-        <select id="Health">
-            <option value="Zone A">Newborn</option>
-            <option value="Zone B">Young</option>
-            <option value="Zone B">Adult</option>
-        </select>
-    </div><br>
-    <div class="form-group">
-        <label>IdEndangered</label><br>
-        <input type="number" id="IdEndangered" name="IdEndangered" class="form-control" placeholder="">
-    </div>
-    <button class="btn btn-primary" type="submit">submit
-        <span class="glyphicon glyphicon-plus"></span></button>
-</form>
-<a href="/sighting">sighting form</a>
+<h3>List of endangered Animals</h3>
 
+<div class="endanger">
+
+
+<h4>Endangered Details</h4>
+<p><strong>Animal's name:</strong>{{Ename}}</p>
+<p><strong>Health's status:</strong>{{health}}</p>
+ <p><strong>Age:</strong>{{Eage}}</p>
+</div>
 <style>
     body{
-    background-image:url('http://www.sonyphotog.com/photos/globalmedicalco/1/3901.jpg');
+    background-image:url("images/endangered.jpeg";
       background-repeat:no-repeat;
     background-size:cover;
+    font -size:20px;
     }
 </style>
+
     </body>
 
 {{/partial}}

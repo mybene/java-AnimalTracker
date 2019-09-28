@@ -4,7 +4,6 @@ import java.util.List;
 
 public class Endangered extends Animal{
 
-    private final Object Endangered;
     private String Ename;
     private String health;
     private  String Eage;
@@ -17,13 +16,12 @@ public class Endangered extends Animal{
  public static final String age_newborn="newborn";
  public static final String age_young="young";
  public static final String age_adult="adult";
-    public Object getId;
 
-    public Endangered(String Ename, String health, String Eage) {
-        this.Ename = Ename;
-        this.health = health;
-        this.Eage = Eage;
-        Endangered=true;
+    public Endangered(int id, String name, String species, boolean endangered, String health, String location, String rangeName, boolean sighting, String ename, String health1, String eage) {
+        super(id, name, species, endangered, health, location, rangeName, sighting);
+        Ename = ename;
+        this.health = health1;
+        Eage = eage;
     }
 
     public String getHealth() {

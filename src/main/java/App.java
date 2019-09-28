@@ -28,34 +28,37 @@ public class App {
             return new ModelAndView(model,"animalForm.hbs");
         },new HandlebarsTemplateEngine());
 
-        post("/success",(request, response) ->{
+//        post("/success",(request, response) ->{
+//           Map<String,Object>model=new HashMap<>();
+////           Integer id= parseInt(request.queryParams("id"));
+//           String name=request.queryParams("name");
+//            String species=request.queryParams("species");
+//           String range_name=request.queryParams("range_name");
+//           String health=request.queryParams("health");
+//           String age= request.queryParams("age");
+//           String location= request.queryParams("location");
+////          Animal newAnimal = new Animal(id,name,species,range_name,health,age,location);
+//           model.put("name",name);
+//           model.put("range_name",range_name);
+//           model.put("health",health);
+//           model.put("age",age);
+//           model.put("location",location);
+////            newAnimal.save();
+//           return new ModelAndView(model,"success.hbs");
+//        } , new HandlebarsTemplateEngine());
+
+       post("/endangered",(request, response) -> {
            Map<String,Object>model=new HashMap<>();
-           String name=request.queryParams("name");
-           String range_name=request.queryParams("range_name");
-          String eId=request.queryParams("eId");
-           String health=request.queryParams("health");
-           String age= request.queryParams("age");
-           String location= request.queryParams("location");
-           model.put("name",name);
-           model.put("range_name",range_name);
-           model.put("health",health);
-           model.put("age",age);
-           model.put("location",location);
-           return new ModelAndView(model,"success.hbs");
-        } , new HandlebarsTemplateEngine());
 
-//        get("/endangered",(request, response) -> {
-//            Map<String,Object>model=new HashMap<>();
-//            return new ModelAndView(model,"endangered.hbs");
-//        }, new HandlebarsTemplateEngine());
+       })
 
-        post("/details",(request, response) -> {
+        post("/animals",(request, response) -> {
             Map<String,Object>model=new HashMap<>();
             List<Sightings>endangers=Sightings.all();
             List<Animal>animals=Animal.all();
             model.put("animals",animals);
             model.put("endangers",endangers);
-            return  new ModelAndView(model,"animals.hbs");
+            return  new ModelAndView(model,"sightings.hbs");
         },new HandlebarsTemplateEngine());
 
 
