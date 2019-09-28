@@ -84,9 +84,6 @@ public class Sightings {
         }
     }
 
-//    public List getNoramalAnimal() {
-//    }
-
     public void delete(){
         try(Connection con= DB.sql2o.open()){
            String sql="DELETE FROM sightings WHERE id=:id";
@@ -101,7 +98,7 @@ public class Sightings {
     public List<NormalAnimal> getNormalAnimal(){
         try(Connection con=DB.sql2o.open()){
             String sql="SELECT animals.*FROM animals JOIN animals_sightings ON(animals.id=animals_sightings.animal_id)WHERE animals_sightings.sighting_id =:id AND animals.endangered='false' ";
-         con.createQuery(sql).addParameter("id",this.id).throwOnMappingFailure(false).executeAndFetch(NormalAnimal.class);
+         return con.createQuery(sql).addParameter("id",this.id).throwOnMappingFailure(false).executeAndFetch(NormalAnimal.class);
         }
     }
 

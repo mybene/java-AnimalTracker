@@ -53,7 +53,7 @@ public class EndangeredTest {
         testEndangered.save();
         Endangered testEndangered1=new Endangered("tiger","ill","young");
         testEndangered1.save();
-        assertEquals(testEndangered.findById(testEndangered1.getId),testEndangered1);
+        assertEquals(testEndangered.findById((Integer) testEndangered1.getId),testEndangered1);
     }
 
     @Test

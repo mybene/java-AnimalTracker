@@ -5,9 +5,9 @@ import java.util.List;
 public class Endangered extends Animal{
 
     private final Object Endangered;
-    private String name;
+    private String Ename;
     private String health;
-    private  String age;
+    private  String Eage;
 
 
  public static final String health_ill = "ill";
@@ -19,10 +19,10 @@ public class Endangered extends Animal{
  public static final String age_adult="adult";
     public Object getId;
 
-    public Endangered(String name, String health, String age) {
-        this.name = name;
+    public Endangered(String Ename, String health, String Eage) {
+        this.Ename = Ename;
         this.health = health;
-        this.age = age;
+        this.Eage = Eage;
         Endangered=true;
     }
 
@@ -31,7 +31,7 @@ public class Endangered extends Animal{
     }
 
     public String getAge() {
-        return age;
+        return Eage;
     }
 
     public void save(){
@@ -41,7 +41,7 @@ public class Endangered extends Animal{
             this.id=(int)con.createQuery(sql,true)
               .addParameter("name",this.name)
                     .addParameter("health",this.health)
-                    .addParameter("age",this.age)
+                    .addParameter("age",this.Eage)
                     .executeUpdate()
                     .getKey();
         }
@@ -79,18 +79,15 @@ public class Endangered extends Animal{
     }
 
 
-//    public boolean equals(Endangered savedEndangered) {
-//    }
-//
-//    public void save() {
-//    }
-//
-//    public Object getId() {
-//    }
-//
-//    public Endangered getName() {
-//        return name;
-//    }
+
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
 //
 //    public void setName(Endangered name) {
 //        this.name = name;

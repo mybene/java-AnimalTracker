@@ -1,0 +1,16 @@
+
+body{
+    background-image:url('images/home.jpeg');
+    background-repeat:no-repeat;
+    background-size:cover;
+    }
+h2{color:white;
+   font-size:30px;
+   shadow:1px 1px golden;
+}
+.title>p{
+padiing :20px;
+}
+form{
+background-color:arcblue;
+}

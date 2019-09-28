@@ -53,18 +53,18 @@ public class NormalAnimal extends Animal {
     public static NormalAnimal findById(int id) {
         try (Connection con = DB.sql2o.open()) {
             String sql = "SELECT *FROM animals where id=:id";
-            NormalAnimal animal = con.createQuery(sql)
+            NormalAnimal newanimal = con.createQuery(sql)
                     .addParameter("id", id)
                     .throwOnMappingFailure(false)
                     .executeAndFetchFirst(NormalAnimal.class);
-            if (animal == null) {
+            if (newanimal == null) {
                 throw new IndexOutOfBoundsException("this animal does not exist!!!");
 
             }
+            return newanimal;
         }
-        return animal;
-    }
 
+    }
 
 
     public static NormalAnimal findByName(String name) {

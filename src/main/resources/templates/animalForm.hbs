@@ -1,0 +1,71 @@
+{{#partial "contnet"}}
+
+    <div class="container">
+
+
+<div class="form" style="text-center">
+    <h3>Add Animal to Database</h3>
+    <form action="/animal" method="post" clas="form">
+        <div class="form-group row">
+            <label for="name" class="col-sm-4 col-form-label">Name of animal</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="name" placeholder="name of animal">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="name" class="col-sm-4 col-form-label">Name of ranger</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="name" placeholder="name of ranger">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="endangered" class="col-sm-2 col-form-label">endangered?</label>
+            <div class="col-sm-10">
+                <select class="form-control" id="endangered">
+                    <option>No</option>
+                    <option >Yes</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="endangered" class="col-sm-2 col-form-label">Age</label>
+            <div class="col-sm-10">
+                <select class="form-control" id="age">
+                    <option>Newborn</option>
+                    <option >Young</option>
+                    <option >Adult</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="endangered" class="col-sm-2 col-form-label">Health</label>
+            <div class="col-sm-10">
+                <select class="form-control" id="age">
+                    <option>Ill</option>
+                    <option >Okay</option>
+                    <option >Healthy</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="endangered" class="col-sm-2 col-form-label">Found on</label>
+            <div class="col-sm-10">
+                <select class="form-control" id="location">
+                    <option>Zone A</option>
+                    <option> Near River</option>
+                    <option >NE Quadrant</option>
+                </select>
+            </div>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary mb-2">ADD</button>
+        </div>
+
+    </form>
+
+</div>
+</div>
+{{/partial}}
+{{>loyout.hbs}}

@@ -95,16 +95,16 @@ public class NormalAnimalTest {
         assertEquals(0,NormalAnimal.all().size());
     }
 
-    @Test
-    public void  delete_deleteSightingGroup(){
-        NormalAnimal testNormalAnimal= new NormalAnimal("tiger","carnivor");
-        testNormalAnimal.save();
-        Sightings sightings= new Sightings("NE Quadrant", "Beline");
-        sightings.save();
-        sightings.addAnimal(testNormalAnimal);
-        testNormalAnimal.delete();
-        assertEquals(0,sightings.getNormalAnimal(sightings).size());
-    }
+//    @Test
+//    public void  delete_deleteSightingGroup(){
+//        NormalAnimal testNormalAnimal= new NormalAnimal("tiger","carnivor");
+//        testNormalAnimal.save();
+//        Sightings sightings= new Sightings("NE Quadrant", "Beline");
+//        sightings.save();
+//        sightings.addAnimal(testNormalAnimal);
+//        testNormalAnimal.delete();
+//        assertEquals(0,sightings.getNormalAnimal(sightings).size());
+//    }
 
     @Test
     public void filterSightingsFromNormalAnimal_int(){

@@ -1,0 +1,49 @@
+{{#partial content}}
+    <body>
+    <div class="container text-center">
+        <h1>ENDNANGERED ANIMALS'S SIGHTINGS RECORED</h1>
+
+     <div>
+
+
+        <table class="table table-bordered table-SILVER">
+            <thead>
+            <tr>
+
+                <th scope="col">Name</th>
+                <th scope="col">Ranger</th>
+                <th scope="col">Endnagered</th>
+                <th scope="col">Age</th>
+                <th scope="col">Health</th>
+                <th scope="col">Location</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">{{name}}</th>
+                <td>{{range_name}}</td>
+                <td>{{animal.getEndangered}}</td>
+                <td>{{age}}</td>
+                <td>{{health}}</td>
+                <td>{{location}}</td>
+            </tr>
+
+            </tbody>
+        </table>
+     </div>
+        <br><br>
+        <a class="btn btn-warning stretched-link" href="/">Back</a>
+        <a class="btn btn-warning stretched-link" href="/animals">List of all animals</a>
+
+    </div>
+    <style>
+    .container{
+    background-image:url('images/elephant.jpeg');
+    background-size:cover;
+    }
+</style>
+    </body>
+
+{{/partial}}
+{{>layout.hbs}}

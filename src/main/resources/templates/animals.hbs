@@ -1,0 +1,45 @@
+{{#partial="content"}}
+
+<body>
+<div>
+    <img class="./images/sightings.jpeg"   src="/image/buck.jpeg" alt="buck">
+
+</div>
+
+<div class="row">
+    <div class="col-sm-6">
+        <h3 style="text-align:center">Endangered Animals</h3>
+        <a href="/animal/new">Add Animal to Database to report a sighting</a>
+        {{#if endnangered}}
+
+
+<div clas="thumbail" style="text-align:center">
+    <h4>{{Endnagered.getName}}</h4>
+    <h5>{{Endangered.getSightings.size}}Reported Sighting(s)</h5>
+    <a href="/animal/endangered.getId()">Click here for details</a>
+
+</div>
+        {{/if}} 
+    </div>
+<div class="col-sm-6">
+    <h3 style="text-align:center">Endangered Animals</h3>
+        <a href="/animal/new" >Add Animal to Database to report a sighting</a>
+
+{{#if Sightings}}
+{{#each Sightins}}
+<div class="thumbail" style="text-align:center">
+    <h4>{{Sighting.getName}}</h4>
+    <h5>{{Sighting.getNormalAnimal.size}}Reported Sighting(s)</h5>
+    <a href="/animal/sighting.getId()">Click here for details</a>
+
+</div>
+{{/each}}
+
+{{else}}
+    <p>No sightings animals not found!!</p>
+{{/if}}
+</div>
+</div>
+</body>
+
+{{>layout.hbs}}

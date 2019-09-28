@@ -1,0 +1,44 @@
+{{#partial "contnet"}}
+
+    <div class="animal">
+
+        <h4>WELCOME TO WILDLIFE-TRACKER</h4>
+
+        <div>
+            <img src="images/animals2.jpeg" alt="animals">
+
+        </div>
+
+
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/animals/new">All Animals</a></li>
+                <li><a href="/sighting">Post Sighting</a></li>
+            </ul>
+        </nav>
+
+        <style>
+        .animal{
+        background-color:aliceblue;}
+        ul{
+        list-style-type:none;
+        margin:0;
+        padding:0;
+        background-color: #f1f1f1;
+        }
+        li a{
+        dispaly:block;
+        color:blue;
+        padding:8px 16px;
+        text-decoration:none;
+        }
+        li a:hover{
+        background-color:silver;
+        color:black;
+        }
+    </style>
+
+    </div>
+{{/partial}}
+{{>layout.hbs}}
