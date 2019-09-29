@@ -1,37 +1,23 @@
 {{#partial "content"}}
 <body>
-    <div class="details" style="backgorund-color:silver;
-        padding:15px;
-        margin:50px;">
+    <div class="details" style="background:white padding:15px margin:50px; ">
         <h1>Animal list!</h1>
 
 
 <img src="images/sightings.jpeg" alt="bird">
-        {{#if get}}
-        <div class="seen " style="border:2px solid black; ">
-            {{#each get }}
+
                 <h3>Animal Sighting:</h3>
                 <p><strong>id:</strong>{{id}}</p>
-                <p><strong>Ranger's name:</strong>{{ rangeName }} </p>
-                <p><strong>location:</strong>{{location }} </p>
+                <p><strong>Ranger's name:</strong>{{name }} </p>
+                <p><strong>location:</strong>{{location}} </p>
 
-            {{/each}}
-        {{else}}
-            <p>No animal!!!</p>
-        {{/if}}
+
 
     </div>
     </div>
 
         <style>
-        .details{
 
-        }
-
-        .seen{
-        border:2px solid black;
-
-        }
     </style>
 </body>
 
