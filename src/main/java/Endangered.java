@@ -1,13 +1,11 @@
 
 import org.sql2o.Connection;
 
-import java.util.List;
-
 public class Endangered extends Animal{
 
     private String name;
     private String health;
-    private  String age;
+    private Integer age;
 
 
  public static final String health_ill = "ill";
@@ -19,7 +17,7 @@ public class Endangered extends Animal{
  public static final String age_adult="adult";
     private int id;
 
-    public Endangered(String age,String health) {
+    public Endangered(Integer age, String health) {
         this.health = health;
         this.age = age;
     }
@@ -28,7 +26,7 @@ public class Endangered extends Animal{
         return health;
     }
 
-    public String getAge() {
+    public Integer getAge() {
         return age;
     }
 

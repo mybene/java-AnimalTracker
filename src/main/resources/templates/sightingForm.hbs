@@ -1,27 +1,23 @@
 
 {{#partial "content"}}
     <body>
-    <style>
+<!--    <style>-->
 
-       body{
-       bakground-image:url("/images/elephant.jpeg");
-       background-size:cover;
-       background-repeat:no-repeat;
-       }
-        form{
-            opacity:0.8;
-            background-color:#f0f0f0;
-            border:1px solid black;
-            color:black;
-            }
 
-        </style>
-    </body>
+<!--        form{-->
+<!--            opacity:0.8;-->
+<!--            background-color:#f0f0f0;-->
+<!--            border:1px solid black;-->
+<!--            color:black;-->
+<!--            }-->
+
+<!--        </style>-->
+<!--    -->
     <div class="container">
         <h3>Add  Sighting Animal</h3>
 
         <div class="form" style="text-center">
-            <form action="/sighting" method="post" class="form">
+            <form action="/sighting/new" method="post" class="form">
 
                 <div class="form-group row">
                     <label for="name" class="col-sm-4 col-form-label">Name of ranger</label>
@@ -43,7 +39,7 @@
 
 
 </form>
-            <a href="/sighting/new" class="btn btn-success">Submit</a>
+            <a  class="btn btn-success">Submit</a>
         </div>
     </div>
     </body>
