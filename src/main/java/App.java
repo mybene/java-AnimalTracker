@@ -102,8 +102,8 @@ public class App {
 
         get("/sightings", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            List<Sightings> post = Sightings.all();
-            model.put("post ", post);
+            List<Sightings> get = Sightings.all();
+            model.put("get ", get);
 
             return new ModelAndView(model, "sigthings.hbs");
         }, new HandlebarsTemplateEngine());
