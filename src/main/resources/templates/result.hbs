@@ -1,0 +1,35 @@
+{{#partial "content"}}
+
+
+
+    <h1>Animal list!</h1>
+
+
+
+    {{#if post}}
+        <div class="seen ">
+        {{#each post }}
+            <h3>Animal seen:</h3>
+            <p><strong>id:</strong>{{id}}</p>
+            <p><strong>name:</strong>{{ name }} </p>
+            <p><strong>species:</strong>{{ species }} </p>
+
+        {{/each}}
+    {{else}}
+        <p>No animal!!!</p>
+    {{/if}}
+    V
+</div>
+
+    <style>
+
+        .seen{
+        background:transparent;
+        background-color:hsla(9, 100%, 64%, 0.5);
+        margin:80px;
+
+        }
+    </style>
+{{/partial}}
+
+{{> layout.hbs}}

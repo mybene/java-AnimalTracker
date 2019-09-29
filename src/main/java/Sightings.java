@@ -8,26 +8,33 @@ public class Sightings {
     private  String location;
     private String rangeName;
     private Timestamp whichtime;
-    private String NormalAnimal;
+
 
     public Sightings(String location, String rangeName) {
         this.location = location;
         this.rangeName = rangeName;
     }
 
-    public String getLocation() {
+    public int getId() {
+        return id;
+    }
 
+    public String getLocation() {
         return location;
     }
 
-    public String getRangename()
-    {
+    public String getRangeName() {
         return rangeName;
     }
 
-    public int getId(){
-        return id;
+    public Timestamp getwhichtime() {
+        return whichtime;
     }
+
+    public String getFormattedDate() {
+        return DateFormat.getDateTimeInstance().format(whichtime);
+    }
+
 
     public static List<Sightings> allByDate() {
         String sql="SELECT *FROM sightings ORDER BY whichtime DESC";
@@ -56,16 +63,16 @@ public class Sightings {
     }
 
 
-    public List<Endangered> getEndangered() {
+   /* public List<Endangered> getEndangered() {
         try(Connection con=DB.sql2o.open()){
             String sql="SELECT animals.*FROM animals JOIN animals_sightings ON(animals.id=animals_sighting.animal_id)WHERE animals_sightings.sighting_id=:id AND animals.endangered=true";
          return con.createQuery(sql).addParameter("id",this.id).throwOnMappingFailure(false).executeAndFetch(Endangered.class);
         }
-    }
+    }*/
 
     public void save() {
         try(Connection con=DB.sql2o.open()){
-            String sql="INSERT INTO  sightings(location, rangeName ,whichtime) VALUES(:location,:rangerName,now())";
+            String sql="INSERT INTO  sightings(location, rangeName ) VALUES(:location,:rangerName)";
             this.id=(int) con.createQuery(sql,true)
                     .addParameter("location",this.location)
                     .addParameter("rangerName",this.rangeName)
@@ -76,7 +83,7 @@ public class Sightings {
 
     public void addAnimal(Animal animal) {
         try (Connection con = DB.sql2o.open()) {
-            String sql = "INSERT INTO animals_sightings(sighting_id,animal_id)VALUES(:sighting_id,:animal_id)";
+            String sql = "INSERT INTO sightings(location, rangeName ) VALUES(:location,:rangerName)";
             con.createQuery(sql).addParameter("sighting_id", this.id)
                     .addParameter("animal_id", animal.getId())
                     .executeUpdate();
@@ -95,12 +102,12 @@ public class Sightings {
     }
 
 
-    public List<NormalAnimal> getNormalAnimal(){
+  /*  public List<NormalAnimal> getNormalAnimal(){
         try(Connection con=DB.sql2o.open()){
             String sql="SELECT animals.*FROM animals JOIN animals_sightings ON(animals.id=animals_sightings.animal_id)WHERE animals_sightings.sighting_id =:id AND animals.endangered='false' ";
          return con.createQuery(sql).addParameter("id",this.id).throwOnMappingFailure(false).executeAndFetch(NormalAnimal.class);
         }
-    }
+    }*/
 
     public static List<Sightings> mostRecent(){
             String sql="SELECT *FROM SIGHTINGS where whichtime BETWEEN now()-interval'36hours' AND now() ORDER BY whichtime DESC LIMIT 5";
@@ -109,20 +116,22 @@ public class Sightings {
              }
         }
 
-
-
-
-    public String getFormattedDate() {
-        return DateFormat.getDateTimeInstance().format(whichtime);
-    }
-
     public Timestamp getWhichtime() {
         return whichtime;
     }
 
-
-
-    public String getNormalAnimal(Sightings sightings) {
-        return NormalAnimal;
+    public void setWhichtime(Timestamp whichtime) {
+        this.whichtime = whichtime;
     }
+
+//    public Object addAnimal() {
+//    }
+
+//    public Timestamp getWhichtime() {
+//    }
+
+
+//    public String getNormalAnimal(Sightings sightings) {
+//        return NormalAnimal;
+//    }
 }

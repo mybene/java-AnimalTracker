@@ -3,26 +3,17 @@ import org.sql2o.*;
 
 public class Animal {
 
-    public int id;
-    public String name;
-    public String species;
-    public boolean endangered;
+   private int id;
+   private String name;
+   private String species;
 
-    public Animal(int id, String name, String species, boolean endangered) {
-        this.id = id;
+   public Animal(String name, String species) {
         this.name = name;
         this.species = species;
-        this.endangered = endangered;
     }
-
 
     public Animal() {
     }
-
-
-//    public Animal( name, String species, String range_name, String eId, String health, String age, String location) {
-//    }
-
 
     public int getId() {
         return id;
@@ -36,9 +27,6 @@ public class Animal {
         return species;
     }
 
-    public boolean isEndangered() {
-        return endangered;
-    }
 
   @Override
     public boolean equals(Object otherAnimal){
@@ -53,10 +41,10 @@ public class Animal {
 
   public void save(){
         try(Connection con=DB.sql2o.open()){
-            String sql="INSERT INTO animals(name,species,endangered) VALUES(:name,:species,:endangered)";
+            String sql="INSERT INTO animals(name,species) VALUES(:name,:species)";
             this.id=(int)con.createQuery(sql,true)
                     .addParameter("name",this.name)
-                    .addParameter("endangered",this.endangered)
+                  /*  .addParameter("endangered",this.endangered)*/
                     .addParameter("species",this.species)
                     .executeUpdate()
                     .getKey();

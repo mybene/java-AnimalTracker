@@ -1,0 +1,50 @@
+
+{{#partial "content"}}
+    <body>
+    <style>
+
+       body{
+       bakground-image:url("/images/elephant.jpeg");
+       background-size:cover;
+       background-repeat:no-repeat;
+       }
+        form{
+            opacity:0.8;
+            background-color:#f0f0f0;
+            border:1px solid black;
+            color:black;
+            }
+
+        </style>
+    </body>
+    <div class="container">
+        <h3>Add  Sighting Animal</h3>
+
+        <div class="form" style="text-center">
+            <form action="/sighting" method="post" class="form">
+
+                <div class="form-group row">
+                    <label for="name" class="col-sm-4 col-form-label">Name of ranger</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="rangerName" name="rangerName" placeholder="name of ranger">
+                    </div>
+                </div>
+
+<div class="form-group row">
+    <label for="endangered" class="col-sm-2 col-form-label">Location</label>
+    <div class="col-sm-10">
+        <select class="form-control" id="age">
+            <option>NE Quadrant</option>
+            <option >Zone A</option>
+            <option >Near river</option>
+        </select>
+    </div>
+</div>
+
+
+</form>
+            <a href="/sighting/new" class="btn btn-success">Submit</a>
+        </div>
+    </div>
+    </body>
+{{/partial}}

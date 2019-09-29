@@ -1,16 +1,18 @@
 {{#partial "content"}}
 <body>
 <style>
-        .container{
-        background-image:url('images/owl.jpeg');
-        background-size:cover;
-        background-repeat:no-repeat;
-        }
 
+body{
+background-image:url('images/elephant.jpeg');
+background-size:cover;
+background-repeat:no-repeat;
+}
         form{
-            background-color:beige;
+            opacity:0.8;
+            background-color:#f0f0f0;
             border:1px solid black;
-            color:black;}
+            color:black;
+        }
 
         </style>
 </body>
@@ -23,69 +25,18 @@
         <div class="form-group row">
             <label for="name" class="col-sm-4 col-form-label">Name of animal</label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" id="name" placeholder="name of animal">
+                <input type="text" class="form-control" id="name" name="name" placeholder="name of animal">
             </div>
         </div>
         <div class="form-group row">
-            <label for="name" class="col-sm-4 col-form-label">Name of ranger</label>
+            <label for="name" class="col-sm-4 col-form-label">specie</label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" id="name" placeholder="name of ranger">
+                <input type="text" class="form-control" id="species" name="species" placeholder="species">
             </div>
         </div>
 
-        <div class="form-group row">
-            <label for="endangered" class="col-sm-2 col-form-label">endangered?</label>
-            <div class="col-sm-10">
-                <select class="form-control" id="endangered">
-                    <option>No</option>
-                    <option >Yes</option>
-                </select>
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="endangered" class="col-sm-2 col-form-label">Sighting?</label>
-            <div class="col-sm-10">
-                <select class="form-control" id="endangered">
-                    <option>No</option>
-                    <option >Yes</option>
-                </select>
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="endangered" class="col-sm-2 col-form-label">Age</label>
-            <div class="col-sm-10">
-                <select class="form-control" id="age">
-                    <option>Newborn</option>
-                    <option >Young</option>
-                    <option >Adult</option>
-                </select>
-            </div>
-        </div>
 
-        <div class="form-group row">
-            <label for="endangered" class="col-sm-2 col-form-label">Health</label>
-            <div class="col-sm-10">
-                <select class="form-control" id="age">
-                    <option>Sick</option>
-                    <option >Okay</option>
-                    <option >Healthy</option>
-                </select>
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="endangered" class="col-sm-2 col-form-label">Found on</label>
-            <div class="col-sm-10">
-                <select class="form-control" id="location">
-                    <option>Zone A</option>
-                    <option> Near River</option>
-                    <option >NE Quadrant</option>
-                </select>
-            </div>
-        </div>
-        <div>
-            <button type="submit" class="btn btn-primary mb-2">ADD</button>
-        </div>
-
+        <button type="submit" class="btn btn-primary mb-2">ADD</button>
     </form>
 
 </div>

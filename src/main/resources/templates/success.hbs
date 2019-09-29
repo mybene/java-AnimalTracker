@@ -3,56 +3,32 @@
 
 
     <div class="container text-center">
-        <h3>YOU HAVE SUCCESSFULY ADDED THE FOLLOWING ANIMAL</h3>
+        <h3 >YOU HAVE SUCCESSFULY ADDED THE ANIMAL IN DATABASE</h3>
 
-     <div>
-
-
-        <table class="table table-bordered">
-            <thead>
-            <tr>
-
-                <th scope="col">Name</th>
-                <th scope="col">Ranger</th>
-                <th scope="col">Endnagered</th>
-                <th scope="col">Sighting</th>
-                <th scope="col">Age</th>
-                <th scope="col">Health</th>
-                <th scope="col">Location</th>
-
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th scope="row">{{name}}</th>
-                <td>{{range_name}}</td>
-                <td>{{animal.getEndangered}}</td>
-                <td>{{animal.getSighting}}</td>
-                <td>{{age}}</td>
-                <td>{{health}}</td>
-                <td>{{location}}</td>
-            </tr>
-
-            </tbody>
-        </table>
-     </div>
-        <br><br>
-        <a  class="btn btn-warning "href="/">Back</a>
-        <a  class="btn btn-warning "href="/sightings">View Sightings Animals</a>
-        <a class="btn btn-warning " href="/endnagered">View Endangered Animals</a>
-
+        <br>
     </div>
+
+    <P style="font-style:20px">
+        Is it Endangered or Sigthing,animal?
+    </P>
+    <a  class="btn btn-warning " href="/sighting">Sightings Animal</a><br><br>
+    <a class="btn btn-warning "  href="/endnagered"> Endangered Animal</a><br><br>
+    <a  class="btn btn-warning "href="/data">Continue </a>
+
     <style>
     container{
-    background-image:url('images/elephant.jpeg');
+    background-image:url('');
     background-size:cover;
     }
-    table{
-    background:transparent;
+
+    h3{
+    color:yellow;}
+    p{
     background-color:silver;
     opacity:0.9;
     color:golden;
     }
+
 
 </style>
 

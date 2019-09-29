@@ -1,12 +1,13 @@
+
 import org.sql2o.Connection;
 
 import java.util.List;
 
 public class Endangered extends Animal{
 
-    private String Ename;
+    private String name;
     private String health;
-    private  String Eage;
+    private  String age;
 
 
  public static final String health_ill = "ill";
@@ -16,13 +17,11 @@ public class Endangered extends Animal{
  public static final String age_newborn="newborn";
  public static final String age_young="young";
  public static final String age_adult="adult";
+    private int id;
 
-    public Endangered(String name, String species, String health, String age){
-        this.name = name;
-        endangered = true;
+    public Endangered(String age,String health) {
         this.health = health;
-        this.Eage = Eage;
-        this.species = species;
+        this.age = age;
     }
 
     public String getHealth() {
@@ -30,7 +29,7 @@ public class Endangered extends Animal{
     }
 
     public String getAge() {
-        return Eage;
+        return age;
     }
 
     public void save(){
@@ -40,7 +39,7 @@ public class Endangered extends Animal{
             this.id=(int)con.createQuery(sql,true)
               .addParameter("name",this.name)
                     .addParameter("health",this.health)
-                    .addParameter("age",this.Eage)
+                    .addParameter("age",this.age)
                     .executeUpdate()
                     .getKey();
         }
@@ -69,15 +68,6 @@ public class Endangered extends Animal{
             return animal;
         }
     }
-//
-//    public static List<Endangered> all(){
-//        String sql="SELECT *FROM endangereds";
-//        try(Connection con=DB.sql2o.open()){
-//            return con.createQuery(sql).executeAndFetch(Endangered.class);
-//        }
-//    }
-
-
 
 
     public int getId() {
@@ -101,3 +91,4 @@ public class Endangered extends Animal{
 //    public List getSightings() {
 //    }
 }
+

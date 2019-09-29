@@ -24,7 +24,7 @@ public class SightingsTest {
     @Test
     public void Sightings_instatiatedCorrectly_true() {
         Sightings testSightings = new Sightings("zone A", "David");
-        assertEquals(true, testSightings instanceof Sightings);
+        assertTrue(String.valueOf(true), testSightings instanceof Sightings);
     }
 
     @Test
@@ -36,13 +36,13 @@ public class SightingsTest {
     @Test
     public void rangerName_instatiatedCorrectly_true() {
         Sightings testSightings = new Sightings("zone A", "David");
-        assertEquals("David", testSightings.getRangename());
+        assertEquals("David", testSightings.getRangeName());
     }
 
     @Test
     public void equals_returnTrueIfPropertiesAreSame_true() {
         Sightings testSightings1 = new Sightings("zone A", "David");
-        assertTrue(testSightings.equals(testSightings1));
+        assertEquals(testSightings, testSightings1);
     }
 
     @Test
@@ -55,7 +55,7 @@ public class SightingsTest {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        assertTrue(testSightings1.equals(testSightings));
+        assertEquals(testSightings1, testSightings);
     }
 
     @Test
@@ -63,8 +63,8 @@ public class SightingsTest {
         testSightings.save();
         Sightings testSightings1 = new Sightings("NE Quadrant", "Beline");
         testSightings1.save();
-        assertEquals(true, Sightings.all().get(0).equals(testSightings));
-        assertEquals(true, Sightings.all().get(1).equals(testSightings1));
+        assertTrue(Sightings.all().get(0).equals(testSightings));
+        assertTrue(Sightings.all().get(1).equals(testSightings1));
     }
 
     @Test
@@ -87,15 +87,14 @@ public class SightingsTest {
         Sightings.findById(1);
     }
 
-//    @Test
-//    public void save_updateDateInDatabase_Sighting() {
-//        Sightings testSightings = new Sightings("NE Quadrant", "Beline");
-//        testSightings.save();
-//        Timestamp savedDate = Sightings.findById(testSightings.getId()).getWhichtime();
-//        Timestamp rigthNow = new Timestamp(new Date().getTime());
-////        assertEquals(rigthNow.getDate(),savedDate.getDate());
-//        assertEquals(DateFormat.getDateTimeInstance().format(rigthNow), savedDate.getFormattedDate());
-//    }
+    @Test
+    public void save_updateDateInDatabase_Sighting() {
+        Sightings testSightings = new Sightings("NE Quadrant", "Beline");
+        testSightings.save();
+        Timestamp savedDate = Sightings.findById(testSightings.getId()).getWhichtime();
+        Timestamp rightNow = new Timestamp(new().getTime());
+        assertEquals(DateFormat.getDateTimeInstance().format(rightNow), DateFormat.getDateTimeInstance().format(savedDate));
+    }
 
     @Test
     public void formattedDate_getFormattedDate_Sighting() {
@@ -118,7 +117,7 @@ public class SightingsTest {
     @Test
     public void delete_deletesSightingGroup() {
         testSightings.save();
-        NormalAnimal testNormalAnimal = new NormalAnimal("tiger", "carnivore");
+        Animal testNormalAnimal = new Animal("tiger", "carnivore");
         testNormalAnimal.save();
         testSightings.addAnimal(testNormalAnimal);
         testSightings.delete();
@@ -128,22 +127,22 @@ public class SightingsTest {
     @Test
     public void update_updateSightingsGroup() {
         testSightings.save();
-        NormalAnimal testNormalAnimal = new NormalAnimal("cat", "carnivor");
-        testNormalAnimal.save();
-        testSightings.addAnimal(testNormalAnimal);
-        NormalAnimal savedNormalAnimal = (NormalAnimal) testSightings.getNormalAnimal().get(0);
-        assertTrue(testNormalAnimal.equals(savedNormalAnimal));
+        Animal testAnimal = new Animal("cat", "carnivor");
+        testAnimal.save();
+        testSightings.addAnimal();
+        Animal savedAnimal = (Animal) testSightings.addAnimal();
+        assertTrue(testAnimal.equals(savedAnimal));
     }
 
     @Test
     public void filterNormalAnimalFromSightingdOnes() {
         Sightings testSightings = new Sightings("NE Quadrant", "Beline");
         testSightings.save();
-        NormalAnimal testNormalAnimal = new NormalAnimal("cat", "carnivor");
-        testNormalAnimal.save();
-        testSightings.addAnimal(testNormalAnimal);
-        List savedAnimals = testSightings.getNormalAnimal();
-        assertTrue(savedAnimals.contains(testNormalAnimal));
+        Animal testAnimal = new Animal("cat", "carnivor");
+        testAnimal.save();
+        testSightings.addAnimal(testAnimal);
+        List savedAnimals = testSightings.addAnimal();
+        assertTrue(savedAnimals.contains(testAnimal));
     }
 
     @Test
