@@ -66,14 +66,19 @@ public class App {
 //        }, new HandlebarsTemplateEngine());
 
 
-        post("/endnagered/new",(req, res) ->{
+        post("/endangered/new",(req, res) ->{
             Map<String, Object> model = new HashMap<>();
             String health = req.queryParams("health");
             Integer age = Integer.parseInt(req.queryParams("age"));
             Endangered newEndangers = new Endangered(age, health);
             req.session().attribute("item",health);
-            model.put("item",req.session().attribute("item"));
-            model.put("newHero",newEndangers);
+//            model.put("item",req.session().attribute("item"));
+            model.put("danger",newEndangers);
+            return new ModelAndView(model, "endangered.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        get("/endangers", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
             return new ModelAndView(model, "endangered.hbs");
         }, new HandlebarsTemplateEngine());
 
@@ -97,10 +102,10 @@ public class App {
 
         get("/sightings", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            List<Animal> post = Animal.all();
-            model.put("post", post);
+            List<Sightings> post = Sightings.all();
+            model.put("post ", post);
 
-            return new ModelAndView(model, "sightings.hbs");
+            return new ModelAndView(model, "sigthings.hbs");
         }, new HandlebarsTemplateEngine());
 
 

@@ -1,27 +1,40 @@
 {{#partial "content"}}
-    <body>
-
-<img src="images/sightings.jpeg" alt="sightings" width="50%">
-    <h3>List of sightings Animals</h3>
-
-    <div class="endanger" style="text-align:center">
+<body>
+    <div class="details">
+        <h1>Animal list!</h1>
 
 
-        <h4> Details</h4>
-        <p><strong>Animal's name:</strong>{{name}}</p>
-        <p><strong>Location:</strong>{{location}}</p>
-        <p><strong>Range's name:</strong>{{rangeName}}</p>
-        <p><strong>Time:</strong>{{whichtime}}</p>
+<img src="images/sightings.jpeg" alt="bird">
+        {{#if post}}
+        <div class="seen ">
+            {{#each post }}
+                <h3>Animal Sighting:</h3>
+                <p><strong>id:</strong>{{id}}</p>
+                <p><strong>Ranger's name:</strong>{{ rangeName }} </p>
+                <p><strong>location:</strong>{{location }} </p>
+
+            {{/each}}
+        {{else}}
+            <p>No animal!!!</p>
+        {{/if}}
+
     </div>
-    <style>
-    body{
-    font -size:20px;
-    }
-    img{
-    margin:50px;
-</style>
+    </div>
 
-    </body>
+        <style>
+        .details{
+        backgorund-color:silver;
+        padding:15px;
+        margin:50px;
+        }
+
+        .seen{
+        border:2px solid black;
+
+        }
+    </style>
+</body>
 
 {{/partial}}
-{{>layout.hbs}}
+
+{{> layout.hbs}}

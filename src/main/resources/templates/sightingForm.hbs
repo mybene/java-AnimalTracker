@@ -1,18 +1,7 @@
 
 {{#partial "content"}}
     <body>
-<!--    <style>-->
 
-
-<!--        form{-->
-<!--            opacity:0.8;-->
-<!--            background-color:#f0f0f0;-->
-<!--            border:1px solid black;-->
-<!--            color:black;-->
-<!--            }-->
-
-<!--        </style>-->
-<!--    -->
     <div class="container">
         <h3>Add  Sighting Animal</h3>
 
@@ -27,7 +16,7 @@
                 </div>
 
 <div class="form-group row">
-    <label for="endangered" class="col-sm-2 col-form-label">Location</label>
+    <label for="endangered" name="location" class="col-sm-2 col-form-label">Location</label>
     <div class="col-sm-10">
         <select class="form-control" id="age">
             <option>NE Quadrant</option>
@@ -36,11 +25,11 @@
         </select>
     </div>
 </div>
-
-
+  <button type="submit">Submit</button>
 </form>
-            <a  class="btn btn-success">Submit</a>
         </div>
     </div>
+
     </body>
 {{/partial}}
+{{>layout.hbs}}
